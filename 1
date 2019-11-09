@@ -1,0 +1,32 @@
+int FotREsIni= A0;
+int FotREsFine=A1;
+
+int Cassa =8;//Buzzer
+
+
+unsigned long tempo_base;
+unsigned long tempo_cronometrato = 0;
+unsigned long tempo_congelato;
+unsigned long temposec;
+
+void setup() {
+  // put your setup code here, to run once:
+pinMode(FotREsIni,INPUT);
+pinMode(FotREsFine,INPUT);
+
+pinMode(Cassa,OUTPUT);
+
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  int distanza=1000; 
+  if(FotREsIni!= 1400)
+  {
+    tempo_cronometrato = millis();
+  
+    
+    
+    
+  }
+}
+}
