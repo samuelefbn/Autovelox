@@ -1,0 +1,49 @@
+int FotREsIni= A0;
+int FotREsFine=A1;
+
+int Cassa =8;//Buzzer
+
+
+int centesimi;
+int stato = 0;
+int secondi;
+int tempo=0;
+
+void setup() {
+  // put your setup code here, to run once:
+pinMode(FotREsIni,INPUT);
+pinMode(FotREsFine,INPUT);
+
+pinMode(Cassa,OUTPUT);
+Serial.begin(9800);
+
+void loop() {
+ cronometro();
+ 
+}
+
+void cronometro(){
+   if (analogRead(FotREsIni)<= 800) { //Accende cronometro
+    stato = 1;
+    centesimi = millis();
+       
+    }
+    while (stato == 1) {
+
+   
+    if (analogRead(FotREsFine)<= 8000) { //Spegne cronometro
+      stato = 3;
+
+      }
+    }
+  }
+  if (stato == 3) {
+    secondi = millis() - centesimi;
+    Serial.println(secondi);
+    stato = 0;
+  }
+ 
+  
+  
+  
+  }
